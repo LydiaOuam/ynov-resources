@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   worker:
-    image: localhost:5000/humans-best-friend_worker
+    image: localhost:5000/worker
     depends_on:
       - redis
       - db
@@ -10,7 +10,7 @@ services:
       - humansbestfriend-network
 
   vote:
-    image: localhost:5000/humans-best-friend_vote
+    image: localhost:5000/vote
     volumes:
       - ./vote:/usr/local/app
     ports:
@@ -24,8 +24,8 @@ services:
     networks:
       - humansbestfriend-network
 
-  seed-data:
-    image: localhost:5000/humans-best-friend_seed-data
+  seed:
+    image: localhost:5000/seed
     depends_on:
       - vote
     restart: "no"
@@ -33,7 +33,7 @@ services:
       - humansbestfriend-network
 
   result:
-    image: localhost:5000/humans-best-friend_result
+    image: localhost:5000/result
     depends_on:
       - db
     volumes:
@@ -45,12 +45,12 @@ services:
       - humansbestfriend-network
 
   redis:
-    image: redis:latest
+    image: localhost:5000/redis
     networks:
       - humansbestfriend-network
 
   db:
-    image: postgres:latest
+    image: localhost:5000/db
     networks:
       - humansbestfriend-network
     volumes:
