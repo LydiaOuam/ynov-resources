@@ -3,25 +3,25 @@ services:
   result:
     image: result
     build:
-      context: result
+      context: humans-best-friend/result
       dockerfile: Dockerfile
 
   vote:
     image: vote
     build:
-      context: vote
+      context: humans-best-friend/vote
       dockerfile: Dockerfile
 
   worker:
     image: worker
     build:
-      context: worker
+      context: humans-best-friend/worker
       dockerfile: Dockerfile
 
   seed:
     image: seed
     build:
-      context: seed-data
+      context: humans-best-friend/seed-data
       dockerfile: Dockerfile
 
   db:
