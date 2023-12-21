@@ -1,8 +1,8 @@
-version: '3'
-  services:
+version: "3"
+services:
     redis : 
       image : localhost:5000/redis
-      networks : humansbestfriend-network
+      network : humansbestfriend-network
       volumes : 
         - "./healthchecks:/healthchecks"
       healthcheck:
@@ -12,7 +12,7 @@ version: '3'
     db : 
       image : localhost:5000/db
       restart: always
-      networks : humansbestfriend-network
+      network : humansbestfriend-network
       environment:
         POSTGRES_PASSWORD: azerty
       volumes:
@@ -24,7 +24,7 @@ version: '3'
 
     worker : 
       image : localhost:5000/worker
-      networks : humansbestfriend-network
+      network : humansbestfriend-network
       depends_on:
         redis:
           condition: service_healthy
@@ -33,10 +33,10 @@ version: '3'
 
     vote : 
       image : localhost:5000/vote
-      networks : humansbestfriend-network
+      network : humansbestfriend-network
       volumes:
       - ./vote:/usr/local/app
-      ports : "5002:80"
+      port : "5002:80"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost"]
         interval: 15s
@@ -46,7 +46,7 @@ version: '3'
 
     result : 
       image : localhost:5000/result
-      networks : humansbestfriend-network
+      network : humansbestfriend-network
       entrypoint: nodemon --inspect=0.0.0.0 server.js
       depends_on:
         db:
@@ -58,7 +58,7 @@ version: '3'
         - "127.0.0.1:9229:9229"
     seed : 
       image : localhost:5000/seed
-      networks : humansbestfriend-network
+      network : humansbestfriend-network
       profiles: ["seed"]
       depends_on:
         vote:
