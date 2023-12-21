@@ -6,6 +6,9 @@ services:
         - humansbestfriend-network
       volumes :
         - "./healthchecks:/healthchecks"
+      healthcheck:
+        test: /healthchecks/redis.sh
+        interval: "5s"
  
     db :
       image : "localhost:5000/db"
@@ -21,6 +24,9 @@ services:
       volumes:
         - "db-data:/var/lib/postgresql/data"
         - "./healthchecks:/healthchecks"
+      healthcheck:
+        test: /healthchecks/postgres.sh
+        interval: "5s"
  
     worker :
       image : "localhost:5000/worker"
