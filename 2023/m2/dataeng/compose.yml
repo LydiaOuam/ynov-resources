@@ -8,7 +8,6 @@ services:
         - "./healthchecks:/healthchecks"
       healthcheck:
         test: /healthchecks/redis.sh
-        interval: "5s"
 
     db : 
       image : "localhost:5000/db"
@@ -26,7 +25,6 @@ services:
         - "./healthchecks:/healthchecks"
       healthcheck:
         test: /healthchecks/postgres.sh
-        interval: "5s"
 
     worker : 
       image : "localhost:5000/worker"
