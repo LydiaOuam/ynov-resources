@@ -73,3 +73,5 @@ services:
       restart: "no"
 volumes:
     db-data:
+networks:
+    humansbestfriend-network:
