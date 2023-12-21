@@ -40,7 +40,8 @@ services:
         - humansbestfriend-network
       volumes:
       - ./vote:/usr/local/app
-      port : "5002:80"
+      ports :
+        - "5002:80"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost"]
         interval: 15s
