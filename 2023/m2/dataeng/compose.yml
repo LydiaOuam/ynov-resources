@@ -71,3 +71,5 @@ services:
         vote:
           condition: service_healthy
       restart: "no"
+volumes:
+    db-data:
