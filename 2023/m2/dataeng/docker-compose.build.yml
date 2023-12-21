@@ -1,0 +1,35 @@
+services:
+
+  result:
+    image: result
+    build:
+      context: result
+      dockerfile: Dockerfile
+
+  vote:
+    image: vote
+    build:
+      context: vote
+      dockerfile: Dockerfile
+
+  worker:
+    image: worker
+    build:
+      context: worker
+      dockerfile: Dockerfile
+
+  seed:
+    image: seed
+    build:
+      context: seed-data
+      dockerfile: Dockerfile
+
+  db:
+    name : db
+    image: postgres
+
+  
+  redis:
+    image: redis 
+
+  
