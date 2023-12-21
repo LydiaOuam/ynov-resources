@@ -7,7 +7,7 @@ services:
       volumes :
         - "./healthchecks:/healthchecks"
       healthcheck:
-        test: /healthchecks/redis.sh
+        test: humans-best-friend/healthchecks/redis.sh
         interval: "5s"
  
     db :
@@ -18,14 +18,14 @@ services:
       ports:
         - "5432:5432"
       environment:
-        - POSTGRES_PASSWORD=azerty
-        - POSTGRES_USER=kaf
-        - POSTGRES_DB=dbtest
+        - POSTGRES_PASSWORD: postgres
+        - POSTGRES_USER: postgres
+        - POSTGRES_DB: postgres
       volumes:
         - "db-data:/var/lib/postgresql/data"
         - "./healthchecks:/healthchecks"
       healthcheck:
-        test: /healthchecks/postgres.sh
+        test: humans-best-friend/healthchecks/postgres.sh
         interval: "5s"
  
     worker :
