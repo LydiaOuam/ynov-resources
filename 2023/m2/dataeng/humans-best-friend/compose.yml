@@ -7,7 +7,7 @@ services:
       volumes :
         - "./healthchecks:/healthchecks"
       healthcheck:
-        test: humans-best-friend/healthchecks/redis.sh
+        test: ./healthchecks/redis.sh
         interval: "5s"
  
     db :
@@ -25,7 +25,7 @@ services:
         - "db-data:/var/lib/postgresql/data"
         - "./healthchecks:/healthchecks"
       healthcheck:
-        test: humans-best-friend/healthchecks/postgres.sh
+        test: ./healthchecks/postgres.sh
         interval: "5s"
  
     worker :
