@@ -25,11 +25,10 @@ services:
       dockerfile: Dockerfile
 
   db:
-    name : db
     image: postgres
 
   
   redis:
     image: redis 
 
-  
+  docker tag postgres db
