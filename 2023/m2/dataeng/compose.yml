@@ -25,7 +25,7 @@ services:
         interval: "5s"
 
     worker : 
-      image : "l"ocalhost:5000/worker"
+      image : "localhost:5000/worker"
       networks :
         - humansbestfriend-network
       depends_on:
