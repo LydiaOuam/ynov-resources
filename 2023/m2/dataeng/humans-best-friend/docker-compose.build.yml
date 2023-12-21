@@ -3,7 +3,7 @@ services:
   result:
     image: result
     build:
-      context: humans-best-friend/result
+      context: /result
       dockerfile: Dockerfile
 
   vote:
