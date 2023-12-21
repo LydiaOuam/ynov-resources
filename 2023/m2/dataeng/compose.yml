@@ -16,14 +16,16 @@ services:
       networks : 
         - humansbestfriend-network
       environment:
-        POSTGRES_PASSWORD: azerty
+        - POSTGRES_PASSWORD=azerty
+        - POSTGRES_USER=kaf
+        - POSTGRES_DB=dbtest
       volumes:
         - "db-data:/var/lib/postgresql/data"
         - "./healthchecks:/healthchecks"
       healthcheck:
         test: /healthchecks/postgres.sh
         interval: "5s"
-
+        
     worker : 
       image : "localhost:5000/worker"
       networks :
