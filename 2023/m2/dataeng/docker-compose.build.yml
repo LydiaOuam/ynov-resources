@@ -1,0 +1,33 @@
+services:
+
+  result:
+    image: result
+    build:
+      context: humans-best-friend/result
+      dockerfile: Dockerfile
+
+  vote:
+    image: vote
+    build:
+      context: humans-best-friend/vote
+      dockerfile: Dockerfile
+
+  worker:
+    image: worker
+    build:
+      context: humans-best-friend/worker
+      dockerfile: Dockerfile
+
+  seed-data:
+    image: seed-data
+    build:
+      context: humans-best-friend/seed-data
+      dockerfile: Dockerfile
+
+  db:
+    image: postgres:15-alpine 
+
+  
+  redis:
+    image: redis 
+
