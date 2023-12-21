@@ -12,6 +12,7 @@ A simple distributed application running across multiple Docker containers.
 7. [Create the docker compose file](#create-the-docker-compose-file)
 8. [Create the network](#create-the-network)
 9. [Run the docker compose](#run-the-docker-compose)
+10. [Ping entre les machines](#ping-entre-les-machines)
 
 ## Requirement
 
@@ -84,3 +85,10 @@ Create a network called : `humansbestfriend-network`
 
 Run the docker compose file using this command : 
 ``` docker-compose up ```
+### Ping entre les machines
+```shell
+docker exec -it 28fb8832ddfe bash
+apt-get install iputils-ping
+ping 22c8d7216ff9
+```
+
