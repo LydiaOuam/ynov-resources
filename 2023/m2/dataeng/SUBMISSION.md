@@ -28,7 +28,7 @@ This solution uses Python, Node.js, .NET, with Redis for messaging and Postgres 
 
 ### Create a docker compose build
 
-We create a file called docker-compose.build.yml : this file was created and you can just finded by clicking on this [link](https://github.com/LydiaOuam/ynov-resources/blob/main/2023/m2/dataeng/docker-compose.build.yml). 
+We create a file called docker-compose.build.yml : this file was created and you can just finded by clicking on this [link](https://github.com/LydiaOuam/ynov-resources/blob/main/2023/m2/dataeng/humans-best-friend/docker-compose.build.yml). 
 After that run the file using this command : 
 ```shell
     docker-compose -f docker-compose.build.yml up
@@ -72,7 +72,7 @@ We can verify the existence of the images in the registry :
 
 ### Create the docker compose file
 
-We created the docker compose file by respecting all the requirements that were indicated in the task, you can see the docker compose [here](https://github.com/LydiaOuam/ynov-resources/blob/main/2023/m2/dataeng/compose.yml).
+We created the docker compose file by respecting all the requirements that were indicated in the task, you can see the docker compose [here](https://github.com/LydiaOuam/ynov-resources/blob/main/2023/m2/dataeng/humans-best-friend/compose.yml).
 
 ### Create the network
  
