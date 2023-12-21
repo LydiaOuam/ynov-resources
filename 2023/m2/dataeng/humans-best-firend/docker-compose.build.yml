@@ -9,7 +9,7 @@ services:
   vote:
     image: vote
     build:
-      context: humans-best-friend/vote
+      context: /vote
       dockerfile: Dockerfile
 
   worker:
