@@ -31,4 +31,3 @@ services:
   redis:
     image: redis 
 
-  docker tag postgres db
