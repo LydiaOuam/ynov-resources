@@ -66,8 +66,8 @@ services:
       ports:
         - "5001:80"
         - "127.0.0.1:9229:9229"
-    seed :
-      image : "localhost:5000/seed"
+    seed-data :
+      image : "localhost:5000/seed-data"
       networks :
         - humansbestfriend-network
       profiles: ["seed"]

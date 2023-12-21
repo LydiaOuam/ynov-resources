@@ -18,8 +18,8 @@ services:
       context: humans-best-friend/worker
       dockerfile: Dockerfile
 
-  seed:
-    image: seed
+  seed-data:
+    image: seed-data
     build:
       context: humans-best-friend/seed-data
       dockerfile: Dockerfile
